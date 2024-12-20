@@ -5,6 +5,10 @@ StudyGenie is a project designed to help users manage their study materials effi
 ## Features
 
 - Organize and categorize study materials
+- Customized preffered topicwise quiz 
+- Chapterwise Notes
+- Blog and Discussion section
+- Exam online from test paper questions
 - Task management and reminders
 - Track your study progress and goals
 - Access resources and study notes from any device
