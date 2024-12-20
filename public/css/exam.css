@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--base-btn-color);
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--base-btn-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f1f1f1;
+  background: grey;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px -5px #909090;
+  background-color: #d90429;
+}
+
+#countdown {
+  font-size: 40px;
+}
+
+.container_wrapper {
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+.container .container_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px;
+  width: 100%;
+}
+.container .container_wrapper .main_page {
+  padding: 1rem;
+  border-radius: 0.2rem;
+  background-color: white;
+}
+.container .container_wrapper .main_page .heading {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr;
+  padding: 1.5rem 1rem;
+  border-bottom: 3px solid #d90429;
+}
+.container .container_wrapper .main_page .heading .hr_line {
+  border: 5px solid green;
+}
+.container .container_wrapper .main_page .heading .title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #d90429;
+  margin: 0;
+}
+.container .container_wrapper .main_page .heading .sub_title {
+  font-weight: bold;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .color {
+  color: #d90429;
+  font-weight: bold;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  input {
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  border: 2px solid;
+  color: lightblue;
+  outline: none;
+  width: 300px;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  input:hover,
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  input:focus {
+  border: 2px solid #d90429;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .question_wrapper
+  .single_question
+  p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .question_wrapper
+  .single_question
+  .four_option {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .question_wrapper
+  .single_question
+  .four_option
+  input[type="radio"] {
+  cursor: pointer;
+  width: 30px;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .question_wrapper
+  .single_question
+  .polynomial_data
+  ul {
+  margin-left: 1rem;
+  list-style-type: none;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  .question_wrapper
+  .single_question
+  .polynomial_data
+  ul
+  p {
+  margin-left: 5rem;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  button {
+  background-color: #d90429;
+  color: white;
+  padding: 1rem 5rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  margin: 2rem auto;
+  display: block;
+  align-self: sef;
+}
+.container
+  .container_wrapper
+  .main_page
+  .exam_information
+  .student_information
+  form
+  button:hover {
+  background-color: #3ccf4e;
+} /*# sourceMappingURL=exam.css.map */
+
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+.rightAns {
+  border-top: 2px solid #d90429;
+  border-bottom: 2px solid #d90429;
+  border-left: 6px solid #d90429;
+  border-right: 6px solid #d90429;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.rightAns p {
+  margin: 0.5rem 1rem;
+}
+.container .container_wrapper .main_page .heading1 {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 1rem;
+  border-bottom: 3px solid #d90429;
+}

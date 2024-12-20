@@ -1,0 +1,310 @@
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- bootstrap cdn links -->
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
+        />
+
+        <!-- icon library -->
+        <link
+          href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+          rel="stylesheet"
+        />
+
+        <!-- slide -->
+        <link href="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+    " rel="stylesheet">
+
+
+        <!-- css -->
+        <link rel="stylesheet" href="/css/dash.css">
+        <link rel="stylesheet" href="/css/style.css" />
+
+
+        <!-- tile and favicons -->
+        <title>Study Genie</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      </head>
+
+      <body class="light blog">
+    <!--Nav markup goes here-->
+      {{>navbar}}
+
+    <!--End nav-->
+    <!--Hero-->
+    <section class="dash_hero">
+        {{!-- <div class="dash_container">
+            <div class="dash_top_text">
+                <h1>{{userinfo.username}}</h1>
+                <p>{{userinfo.email}}</p>
+                
+            </div>
+            <div class="dp">
+
+                <img class="dpimg" src="/images/profile.png"  alt="">
+            </div> --}}
+        </div>
+
+    </section>
+    <section class="profile-info">
+        <div class="profile-info-conatiner">
+          <div class="dp">
+            {{!-- <form action="/update" method="POST" enctype="multipart/form-data"> --}}
+              <input type="file" name="image" id="file-input" style="display: none;">
+                {{#if extra.img.data}}
+                <img class="dpimg" id="dpimg"
+                src="data:{{ extra.img.contentType }};base64,{{ extra.img.data }}"
+              />{{else}}
+                <img class="dpimg" id="dpimg" src="/images/profile.png"  alt="">
+                {{/if}}
+                <div class="pro-details">
+                  <input class="input-event-username" id="uname" placeholder="Enter Your Username" id="username">
+                <h2 class="profile-data-username" id="Puname">{{userinfo.username}}</h2>
+
+              </div>
+                  <button id="dp-name-edit" onclick="updateimg()">EDIT</button>
+                  <button id="dp-name-update" onclick="updateimgDB()">CONFIRM</button>
+              {{!-- </form> --}}
+          </div>
+
+            <div class="input-group">
+            <div class="profile"  >
+
+              
+            <div >
+                <label for="First-name">First Name</label>
+                <div id="First-name" >
+                  <div id="for-update" class="inputPlusEdit">
+                    <input class="input-event" id="fname">
+                    <p class="wrong">Your email is incorrect or empty</p>
+                    <button class="update"  onclick="fnameDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                    <div class="profile-data" id="ufname">
+                    {{#if extra.fname}}
+                      {{extra.fname}}
+                      {{else}}
+                      Not Provided
+                      {{/if}}
+                    </div>
+                    <button class="update"  onclick="updatefname()">&#9998;</button>
+                  </div>
+                </div>
+              </div>
+            <div >
+                <label for="last name">Last Name</label>
+                <div id="Last-name" >
+                  <div id="for-update" class="inputPlusEdit">
+                    <input class="input-event" id="lname" value="{{extra.lname}}">
+                    <button class="update" onclick="lnameDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="ulname">{{#if extra.lname}}
+                    {{extra.lname}}
+                    {{else}}
+                    Not Provided
+                    {{/if}}</div>
+                  <button class="update" onclick="updatelname()">&#9998;</button>
+                  </div>
+                </div>
+
+              </div>
+              <div >
+                <label for="email">Email</label>
+                <div id="Email">
+                  <div id="for-update" class="inputPlusEdit">
+                  <input class="input-event" id="email" value="{{userinfo.email}}" id="email">
+                  <p class="wrong">Your email is incorrect or empty</p>
+                  <button class="update" onclick="EmailDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="uemail">{{userinfo.email}}</div>
+                  <button class="update" onclick="updateEmail()">&#9998;</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- rest form -->
+              <div >
+                <label for="Class">Class</label>
+                <div id="Class">
+                  <div id="for-update" class="inputPlusEdit">
+                    {{!-- do it here --}}
+                    <div class="selectClassDropdown">
+                      <select name="classSelection" id="classSelection">
+                            <option value="Class 5">Class 5</option>
+                          <option value="Class 6">Class 6</option> 
+                          <option value="Class 7">Class 7</option>
+                          <option value="Class 8">Class 8</option>
+                          <option value="SSC">SSC</option>
+                          <option value="HSC">HSC</option>
+                          <option value="Admission">Admission</option>               
+                      </select>
+                    </div>
+                  {{!-- <input class="input-event" id="class" value="{{extra.class}}" > --}}
+                  <button class="update" onclick="ClassDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                    <div class="profile-data" id="uclass">{{extra.class}}</div>
+                  {{!-- <div class="profile-data" id="uclass">{{extra.class}}</div> --}}
+                  <button class="update" onclick="updateClass()">&#9998;</button>
+                  </div>
+                </div>
+              </div>
+              <div >
+                  <label for="department">Department</label>
+              <div id="Dept">
+                  <div id="for-update" class="inputPlusEdit">
+                  <div class="selectClassDropdown">
+                      <select name="classSelection" id="classSelection">
+                            <option value="Science">Science</option>
+                          <option value="Commerce">Commerce</option> 
+                          <option value="Arts">Arts</option>
+                      </select>
+                    </div>                 
+                  <button class="update" onclick="DeptDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="udept">{{extra.dept}}</div>
+                  <button class="update" onclick="updatedept()">&#9998;</button>
+                  </div>
+                </div>
+              </div>
+              <div >
+                {{!-- <label for="password">Confirm Password</label> --}}
+                <label for="choices">Chosen Fields</label>
+                <div id="Choice">
+                  <div id="for-update" class="inputPlusEdit">
+                    <div class="selectClassDropdown">
+                      <select name="classSelection" id="classSelection">
+                          <option value="Medical">Medical</option>
+                          <option value="Versity">Versity</option> 
+                          <option value="Engineering">Engineering</option>
+                          <option value="IBA">IBA</option>              
+                      </select>
+                    </div>                   
+                  <button class="update" onclick="choiceDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="uchoice">{{extra.choice}}</div>
+                  <button class="update" onclick="updatechoice()">&#9998;</button>
+                  </div>
+                </div>
+                <div >
+                <label for="Phone">Phone No.</label>
+                <div id="Phone">
+                  <div id="for-update"  class="inputPlusEdit">
+                  <input class="input-event" id="phone" value="{{extra.pnum}}" id="email">
+                  <button class="update" onclick="phoneDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="uphone">{{extra.pnum}}</div>
+                  <button class="update" onclick="updatephone()">&#9998;</button>
+                  </div>
+                </div>
+              </div>
+              {{!-- update password --}}
+               {{!-- <div >
+                <label for="Phone">Pass</label>
+                <div id="Pass">
+                  <div id="for-update"  class="inputPlusEdit">
+                  <input class="input-event" id="pass" value="{{userinfo.password}}" id="email">
+                  <button class="update" onclick="passDB()">CONFIRM</button>
+                  </div>
+                  <div id="initial">
+                  <div class="profile-data" id="upass">{{userinfo.password}}</div>
+                  <button class="update" onclick="updatepass()">&#9998;</button>
+                  </div>
+                </div>
+              </div> --}}
+              </div>
+                {{!-- <button class="btn-hadi" id="btn-hadi" onclick="update(); return false;" >Update</button>
+                <button  class="btn-hadix" id="btn-hadix" onclick="submitupdate(); return false">Submit</button> --}}
+            </div>
+        </div>
+            {{!--  --}}
+
+            
+        </div>
+        
+    </section>
+
+{{!-- table is here --}}
+
+
+{{!-- 
+<div class="container">
+    <p class="resultTitle">Result Board</p>
+<div class="table-container">
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Exam ID</th>
+          <th>Class</th>
+          <th>Subject</th>
+          <th>Chapter</th>
+          <th>Marks</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody id="data-body">
+        <!-- Table rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+ </div>
+  </div> --}}
+
+
+    <!-- footer segment starts -->
+          {{>footer}}
+    <!-- footer segment ends -->
+
+
+        <!-- script -->
+        <!-- slider cdn script -->
+        <script>
+          const base64Image = extra.img.data.toString('base64');
+    </script>
+        <script src="/js/dash.js"></script> 
+
+        <script src="
+        https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+        "></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+
+      <!-- bootsrap  cdn script-->
+
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"
+        ></script>
+
+        <!-- main.js -->
+        {{!-- <script src="/js/login.js"></script>  --}}
+        <script src="/js/main.js"></script> 
+        <script src="/js/calender.js"></script>
+      </body>
+    </html>

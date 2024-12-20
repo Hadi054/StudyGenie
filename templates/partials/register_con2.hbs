@@ -1,0 +1,125 @@
+  <div class="query-container" id="query-container">
+    <!-- query welcome text -->
+    <div class="welcome-txt">
+      <div class="welcome-1">
+        Registration is Successful.
+      </div>
+
+      <div class="welcome-2">
+        We need some more information to start.
+      </div>
+    </div>
+     <!-- query welcome text  ends-->
+     <!-- query input group -->
+    <div class="query-input-group">
+      <!-- class selector dropdown -->
+        <div class="class-selector"> 
+
+        <div class="label">
+          Which class you are in?
+
+        </div>
+        {{!-- <div class="selct-class" id="select-class">
+          <div class="select-btn">
+            <span class="select-btn-txt">Choose class</span>
+            <i class="icon ion-md-arrow-dropdown"></i>
+
+          </div>
+          <ul class="options">
+            <li class="option">
+              Class 5
+            </li>
+            <li class="option">
+              Class 6
+            </li>
+            <li class="option">
+              Class 7
+            </li>
+            <li class="option">
+              Class 8
+            </li>
+            <li class="option">
+              SSC
+            </li>
+            <li class="option">
+              HSC
+            </li>
+            <li class="option">
+              Admission
+            </li>
+          </ul>
+        </div> --}}
+        {{>selectclass}}
+        </div>
+<!-- classs selectorr dropdown ends -->
+<!-- dept selector dropdown starts -->
+        <div class="dept-selector" id="dept-selector" > 
+
+          <div class="label">
+            Which department are you from?
+  
+          </div>
+          <div class="selct-dept" id="select-dept">
+            <div class="dept-select-btn">
+              <span class="dept-select-btn-txt">Choose department</span>
+              <i class="dept-icon ion-md-arrow-dropdown"></i>
+  
+            </div>
+            <ul class="dept-options">
+              <li class="dept-option">
+                Science
+              </li>
+              <li class="dept-option">
+                Commerce
+              </li>
+              <li class="dept-option">
+                Arts
+              </li>
+             
+            </ul>
+          </div>
+          </div>
+          <!-- dept selector dropdown ends -->
+
+       {{!-- <div class="choicechip" >
+          <div class="label">
+            Which path do you want to choose?
+          </div>
+          <div class="choice-chip-container">
+              <div class="choice-chip-button science">
+                Medical
+              </div>
+              <div class="choice-chip-button science">
+                Engineering
+                <!-- <span class="science">Engineering</span> -->
+              </div>
+              <div class="choice-chip-button science">
+                Versity "ka"
+                <!-- <span class="science">Versity "ka"</span>  -->
+              </div>
+              <div class="choice-chip-button commerce">
+                Versity "kha"
+                <!-- <span class="commerce">Versity "kha"</span>  -->
+              </div>
+              <div class="choice-chip-button arts">
+                Versity "ga"
+                <!-- <span class="arts">Versity "ga"</span>  -->
+              </div>
+              <div class="choice-chip-button all-dept">
+                Versity "gha"
+                <!-- <span class="all-dept">Versity "gha"</span>  -->
+              </div>
+              <div class="choice-chip-button all-dept">
+                IBA
+                <!-- <span class="all-dept">IBA</span>  -->
+
+              </div>
+          </div>
+
+       </div> --}}
+       <button class="query-btn" id="query-btn" name="action" value="query-save" onclick="submitsec();">Submit</button>
+
+    </div>
+    <!-- query input group ends -->
+
+  </div>

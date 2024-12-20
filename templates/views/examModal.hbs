@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/examModal.css" />
+    <title>Document</title>
+  </head>
+  <body>
+        {{>navbar}}
+    <div class="container">
+      <div class="container_wrapper">
+        <div class="exam_modal_container">
+          <div class="exam_filter">
+            <div class="exam_level">
+              <label for="exam_class">Exam Level</label>
+              <select name="exam_class" id="exam_level_select">
+                <option value="hsc">HSC</option>
+                <option value="ssc">SSC</option>
+                <option value="psc">PSC</option>
+                <option value="ssc">JSC</option>
+              </select>
+            </div>
+            <div class="exam_subject">
+              <label for="exam_class">Subject</label>
+              <select name="exam_class" id="exam_subject_select">
+                <option value="bangla">Bangla</option>
+                <option value="ict">ICT</option>
+                <option value="physics">Physics</option>
+              </select>
+            </div>
+            <div class="exam_chapter">
+              <label for="exam_class">Chapter</label>
+              <select name="exam_class" id="exam_chapter_select">
+                <option value="all">All</option>
+                <option value="1">Chapter 1</option>
+                <option value="2">Chapter 2</option>
+              </select>
+            </div>
+            <div class="exam_chapter">
+              <label for="exam_class">Type</label>
+              <select name="exam_class" id="exam_type_select">
+                <option value="mcq">MCQ</option>
+                <option value="cq">CQ</option>
+              </select>
+            </div>
+            <div class="exam_prev_year">
+              <label for="exam_class">Prev. Year</label>
+              <select name="exam_class" id="exam_year_select">
+                <option value="none">None</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2019">2019</option>
+
+              </select>
+            </div>
+          </div>
+          <button type="submit" id="confirm_btn" class="exam_filter_btn">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+    {{>footer}}
+    <script src="./js/examModal.js"></script>
+  </body>
+</html>
+<!-- class subject chapter 1,2,3,4,5,6 naki all mcq naki cq updated to database -->

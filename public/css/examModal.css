@@ -1,0 +1,91 @@
+:root {
+  --dark-main: #141529;
+  --base-btn-color: #d90429;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url("../images/exam_background.jpg") center no-repeat;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body {
+  height: 100vh;
+}
+
+.container_wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam_modal_container {
+  background: var(--dark-main);
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid var(--base-btn-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 800px;
+  height: 400px;
+}
+.exam_modal_container .exam_filter {
+  margin: 2rem 1rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-column-gap: 2rem;
+}
+.exam_modal_container .exam_filter div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.exam_modal_container .exam_filter_btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--base-btn-color);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.exam_modal_container .exam_filter_btn:hover {
+  background-color: whitesmoke;
+  color: var(--base-btn-color);
+  box-shadow: inset 1px 1px 0px 2px var(--base-btn-color);
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-right: 2rem;
+  font-weight: bold;
+}
+
+select {
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: dimgray;
+  border-radius: 0.4rem;
+  border: 2px solid var(--base-btn-color);
+  outline: none;
+} /*# sourceMappingURL=exam.css.map */

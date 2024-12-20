@@ -1,0 +1,60 @@
+ <div class="main-container" id="main-container">
+    <!-- chaange container div -->
+    <div class="w1" id="ctn">
+      <!-- welcome text starts -->
+
+      <div class="welcome-txt">
+        <div class="welcome-1" id="welcome-1">
+          Welcome to StudyGenie.
+        </div>
+
+        <div class="welcome-2" id="welcome-2">
+          Let's Begin The adventure.
+        </div>
+      </div>
+      <!-- welcome text ends -->
+
+      <div class="input-group">
+        <form action="/register" id="regform" method="post">
+          <div class="email-box" id="email-box">
+            <label for="email">Email</label>
+            <div>
+              <input class="input-event" type="email" name="email" placeholder="Enter Your Email" id="email">
+              <button onclick="emailIn(); return false;">Continue</button>
+              <p class="wrong">Your email is incorrect or empty</p>
+            </div>
+
+          </div>
+          <!-- rest form -->
+          <div class="username-box">
+            <label for="username">User name</label>
+            <div>
+              <input class="input-event" name="username" type="username" placeholder="Enter Your Username" id="username">
+              <button onclick="usernameIn(); return false;">Continue</button>
+              <p class="wrong">Username is empty</p>
+            </div>
+          </div>
+          <div class="password-box">
+            <label for="password">Password</label>
+            <div>
+              <input class="input-event" name="password" type="password" placeholder="Enter Your password" id="password">
+              <button onclick="paswwordIn(); return false;">Continue</button>
+              <p class="wrong">Password is empty</p>
+            </div>
+          </div>
+          <div class="confirm-password-box">
+            <label for="password">Confirm Password</label>
+            <div>
+              <input class="input-event" name="confirmpassword" type="password" placeholder="Enter the same password" id="confirm-password">
+              <button onclick="confirmpaswwordIn(); return false;">Continue</button>
+              <p class="wrong">Passwords don't match</p>
+            </div>
+          </div>
+            <button name="action"value="main-save" class="btn-hadi" id="submit-btn" onclick="submitmain(); return false">Submit</button>
+        </form>
+
+      </div>
+    </div>
+    <!-- chaange container div ends -->
+
+  </div>

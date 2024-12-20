@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap cdn links -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- icon library -->
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- slide -->
+    <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="css/sign_up.css"> -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/sign_up.css" />
+    <!-- tile and favicons -->
+    <title>LogIn | StudyGenie</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+     <!--Nav markup goes here-->
+   <!--Nav markup goes here-->
+{{>navbar}}
+<!--End nav-->
+
+  <!--End nav-->
+    <div class="container-login">
+      <div class="box">
+        <!-- LogIn box -->
+
+        <div class="box-login" id="login">
+          <div class="top-header">
+            <h3>Welcome to StudyGenie</h3>
+            <small>We are happy to have you back</small>
+          </div>
+          <div class="input-group">
+            <form action="/login" method="post">
+            <div class="input-field">
+              <input type="text" class="input-box"id="logEmail" name="logEmail" required />
+              <label for="logEmail">Email address</label>
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                class="input-box"
+                id="logPassword"
+                name="logPassword"
+                required
+              />
+              <label for="logPassword">Password</label>
+              <div class="eye-area">
+                <div class="eye-box" onclick="myLogPassword">
+                  <i class="fa-regular fa-eye" id="eye"></i>
+                  <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                </div>
+              </div>
+            </div>
+            <div class="remember">
+              <input type="checkbox" id="formCheck" class="check" />
+              <label for="formCheck">Remember Me</label>
+            </div>
+            <div class="forgot">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <!-- <div class="input-field">
+              <input type="submit" class="input-submit" value="Sign In" />
+            </div> -->
+            <!-- <div class="forgot">
+              <a href="#">Forgot Password?</a>
+            </div> -->
+            <button class="btn-hadi" id="submit-btn" >Submit</button>
+
+          </form>
+          </div>
+          
+        </div>
+        <div class="pop_up">
+            
+        </div>
+      </div>
+    </div>
+    <script src="/js/sign_up.js"></script>
+
+  </body>
+</html>

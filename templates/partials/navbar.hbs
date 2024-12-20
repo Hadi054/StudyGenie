@@ -1,0 +1,118 @@
+<header>
+  <div class="container">
+    <nav>
+      <div class="menu-icons">
+        <i class="icon ion-md-menu"></i>
+        <i class="icon ion-md-close"></i>
+
+      </div>
+      <a href="/" class="logo">
+        <img src="/images/icons/open-book.png" alt="" />
+        <!-- //<i class="icon ion-md-book"></i> -->
+      </a>
+      <ul class="nav-list">
+        <li><a href="/newsletter">NEWSLETTER</a></li>
+        {{! 
+        <li><a href="#">Classes
+            <i class="icon ion-md-arrow-dropdown"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="#">PSC</a></li>
+            <li><a href="#">CLASS 6</a></li>
+            <li><a href="#">CLASS 7</a></li>
+            <li><a href="#">JSC</a></li>
+            <li><a href="#">SSC</a></li>
+            <li><a href="#">HSC</a></li>
+            <li><a href="#">Admissions
+                <i class="icon ion-md-arrow-dropdown"></i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="#">University</a></li>
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Medical.....
+                    <i class="icon ion-md-arrow-dropdown"></i>
+                  </a>
+                  <ul class="sub-menu">
+                    <li><a href="#">Dental</a></li>
+                    <li><a href="#">General</a></li>
+                  </ul>
+
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+        </li> }}
+
+        {{! <li><a href="#">Admissions
+            <i class="icon ion-md-arrow-dropdown"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="#">University</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">MEDICAL</a></li>
+            <li><a href="#">DENTAL</a></li>
+          </ul>
+        </li> }}
+        {{! <li><a href="jobs">JOBS</a></li> }}
+        <li><a href="/books">BOOKS</a></li>
+        <li><a href="/blog">Articles</a></li>
+        <li><a href="/notes">NOTES</a></li>
+        {{! <li><a href="/quiz" class="take_exam btn p-3">Take a Exam</a></li> }}
+        {{!-- {{#if isloggedin}} --}}
+        <li><a href="/examModal" class="take_exam btn p-3">Take a Exam</a></li>
+        {{!-- {{/if}} --}}
+
+        {{! <li class=" p-4"><a href="/" class=" logo ">
+                    <img src="/images/icons/open-book.png" alt="">
+                    <!-- //<i class="icon ion-md-book"></i> -->
+                     </a></li> }}
+        {{#if isloggedin}}
+          <li
+            class="move-right profileData"
+            onmouseover="showInfo()"
+            onmouseout="hideInfo()"
+          ><a href="#">
+
+              <img
+                class="dpimg-nav"
+                src="data:{{extra.img.contentType}};base64,{{extra.img.data}}"
+                alt=""
+              /></a>
+            <p>{{userinfo.username}}</p>
+
+            <div class="info">
+              <div class="profile">
+                <a href="/dashboard">
+                  <button>Profile</button>
+                </a>
+              </div>
+              <div class="profile">
+                <a href="/examhistory">
+                  <button>Exam History</button>
+                </a>
+              </div>
+              <div class="logout">
+                <a href="/logout">
+                  <button>Logout</button>
+                </a>
+              </div>
+            </div>
+
+          </li>
+          <li class=""></li>
+        {{else}}
+          <li class="move-right btn btn-primary p-4"><a
+              href="/login"
+            >Login</a></li>
+          <li class="move-right btn btn-primary p-4"><a
+              href="/register"
+            >Register</a></li>
+
+        {{/if}}
+
+      </ul>
+    </nav>
+  </div>
+</header>

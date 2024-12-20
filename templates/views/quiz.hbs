@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap cdn links -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- icon library -->
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/exam.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container_wrapper">
+        <div class="main_page">
+          <div class="heading">
+            <div>
+              <p class="title">{{examinfo.subjectName}}</p>
+              <div class="sub_title">{{examinfo.chapterNumber}}</div>
+            </div>
+
+            <div class="card">
+              <span id="countdown" style="font-weight: bold"></span>
+            </div>
+          </div>
+          <!-- <hr class="hr_line" /> -->
+          <div class="exam_information">
+            <p class="instruction">
+              You have 25 minutes to take the quiz. Once the time finish your
+              answers will be submitted automatically. Dont refresh the
+              page,otherwise the test have to start again.
+            </p>
+
+            <div class="student_information">
+              <form id="quizForm" action="/examResult" method="post">
+                <label
+                  for="email"
+                  class="color hover-underline-animation"
+                >Email</label>
+                <br />
+                <input type="email" name="email" />
+                <br />
+                <span>example@example.com</span>
+                <hr />
+
+                <div class="question_wrapper">
+                  {{#each randomItems}}
+                    <div class="single_question">
+                      <p>Q{{inc @index}}. {{this.question}}</p>
+                      <div class="four_option">
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option1}}"
+                            />
+                            <span>{{this.option1}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option2}}"
+                            />
+                            <span>{{this.option2}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option3}}"
+                            />
+                            <span>{{this.option3}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option4}}"
+                            />
+                            <span>{{this.option4}}</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  {{/each}}
+                  {{#each polynomialMcq}}
+                    <div class="single_question polynomial">
+
+                      <p>Q25. {{this.question}}</p>
+                      <div class="polynomial_data">
+                        <ul>
+                          <li>i) {{this.polynomial1}}</li>
+                          <li>ii) {{this.polynomial2}}</li>
+                          <li>iii) {{this.polynomial3}}</li>
+                        </ul>
+                        <p>&nbsp;&nbsp;Choose the correct answer</p>
+                      </div>
+                      <div class="four_option">
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option1}}"
+                            />
+                            <span>{{this.option1}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option2}}"
+                            />
+                            <span>{{this.option2}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option3}}"
+                            />
+                            <span>{{this.option3}}</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <input
+                              type="radio"
+                              name="{{this._id}}"
+                              value="{{this.option4}}"
+                            />
+                            <span>{{this.option4}}</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  {{/each}}
+
+                </div>
+                <input
+                  type="hidden"
+                  name="randomItems"
+                  value="{{randomItemsString}}"
+                />
+                <input
+                  type="hidden"
+                  name="polynomialMcq"
+                  value="{{polynomialMcqString}}"
+                />
+                
+                <hr />
+                
+                  
+                <button type="submit" onclick="submitForm()">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/exam.js"></script>
+
+  </body>
+</html>

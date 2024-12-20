@@ -1,0 +1,132 @@
+:root {
+  --dark-main: #141529;
+  --base-btn-color: #d90429;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url("/images/exam_background.jpg") center no-repeat;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body {
+  height: 100vh;
+}
+
+.container_wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam_modal_container {
+  z-index: 1;
+}
+
+.exam_modal_container {
+  background: var(--dark-main);
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid var(--base-btn-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 800px;
+  height: 500px;
+  text-align: center;
+}
+.exam_modal_container .shadow {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  color: grey;
+  border-radius: 50%;
+  background: #191825;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exam_modal_container .shadow p {
+  font-size: 20px;
+  font-weight: bold;
+  color: ligh;
+}
+.exam_modal_container .shadow p span {
+  color: white;
+  font-size: 50px;
+}
+.exam_modal_container .shadow:before,
+.exam_modal_container .shadow:after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: linear-gradient(
+    45deg,
+    #d90429,
+    #fb0094,
+    #0000ff,
+    #ff0000,
+    #d90429,
+    #fb0094,
+    #0000ff,
+    #ff0000
+  );
+  background-size: 500%;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 50%;
+  z-index: -100;
+  animation: animate 5s linear infinite;
+}
+.exam_modal_container .shadow:after {
+  filter: blur(20px);
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.exam_modal_container .exam_filter_btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--base-btn-color);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.exam_modal_container .answer {
+  background: transparent;
+  color: grey;
+  text-decoration: underline;
+}
+.exam_modal_container .answer:hover {
+  color: white;
+}
+.exam_modal_container .exam_filter_btn:hover {
+  background-color: whitesmoke;
+  color: var(--base-btn-color);
+  box-shadow: inset 1px 1px 0px 2px var(--base-btn-color);
+}

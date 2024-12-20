@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/examResult.css" />
+    <title>Document</title>
+  <body>
+        {{>navbar}}
+    <div class="container">
+      <div class="container_wrapper">
+        <div class="exam_modal_container">
+          <h1>Your Score</h1>
+
+          <div class="shadow">
+            <p>
+              <span> {{quizResult}} </span><br />
+              out of 25
+            </p>
+          </div>
+          <form action="/answer" method="post">
+          <input
+                  type="hidden"
+                  name="randomItems"
+                  value="{{randomItems}}"
+                />
+                <input
+                  type="hidden"
+                  name="polynomialMcq"
+                  value="{{polynomialMcq}}"
+                />
+          <button class="answer" id="answer_page" type="submit">see the answer</button>
+          </form>
+          <button type="submit" class="exam_filter_btn" id="replayQuiz">
+            &#8635; Replay Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+        {{>footer}}
+        <script src="/js/examResult.js"></script>
+  </body>
+  <script>
+    console.log(polynomialMcq)
+  </script>
+</html>

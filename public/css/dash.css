@@ -1,0 +1,328 @@
+:root {
+  --dark-main: #141529;
+  --base-btn-color: #d90429;
+}
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+.dash_hero {
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/vintage_book.jpg") center no-repeat;
+  background-size: cover;
+  border-bottom: 4px solid var(--base-btn-color);
+}
+
+.profile-info {
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
+.profile-info .profile-info-conatiner {
+  background-color: var(--dark-main);
+  color: white;
+  opacity: 5;
+  margin-top: 8%;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 3px solid var(--base-btn-color);
+}
+
+.dp {
+  margin: 3rem 0rem;
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--base-btn-color);
+}
+
+.dpimg {
+  height: 150px;
+  width: 150px;
+  border: 3px solid var(--base-btn-color);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pro-details {
+  margin-top: 5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.profile-data-username {
+  text-align: center;
+  font-size: 30px;
+}
+#dp-name-edit {
+  display: block;
+  border: 0px;
+  padding: 5px 6rem;
+  border-radius: 5px;
+  background-color: var(--base-btn-color);
+}
+button {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+#dp-name-update {
+  margin: 1rem 0;
+  display: none;
+  border: 0px;
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  background-color: var(--base-btn-color);
+}
+.profile-info div {
+  margin: 1rem 0;
+}
+
+.profile-info label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.profile-info .update {
+  padding: 0;
+  border-radius: 5px;
+  background-color: var(--base-btn-color);
+  margin-left: 2rem;
+}
+
+.editname {
+  height: 20px;
+  width: 20px;
+}
+
+#btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 145px;
+  height: 50px;
+  background: #cccccd;
+  border-radius: 10px;
+  box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
+}
+.btn-hadi {
+  display: block;
+  margin-top: 10%;
+  margin-left: 70%;
+  width: 20%;
+  padding: 0.5em;
+  color: #fff;
+  background-color: #d90429;
+  border: 2px solid #d90429;
+  border-radius: 0.5rem;
+  transition: background-color 650ms;
+  font-size: 16px;
+}
+
+.wrong {
+  color: #d90429;
+  font-size: 1.5rem;
+  display: none;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group .profile {
+  margin-top: 2rem;
+  width: 80%;
+}
+.input-group form label {
+  font-size: 18px;
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+
+#for-update {
+  display: none;
+  grid-template-columns: 3fr 1fr;
+}
+/* this kor ekhane */
+#for-update .input-event {
+  display: block;
+  cursor: default;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--base-btn-color);
+  outline: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+#initial {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+#initial .profile-data {
+  display: block;
+  cursor: default;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--base-btn-color);
+  outline: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.input-event-username {
+  display: none;
+  margin-top: 0%;
+  text-align: center;
+  padding: 0.5rem 4rem;
+  font-size: 15px;
+  border-radius: 0.5rem;
+}
+
+#file-input {
+  display: none;
+}
+
+#classSelection {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 18px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 5rem;
+  border: 5px solid var(--dark-main);
+  max-height: 400px; /* You can adjust this height as needed */
+  position: relative;
+}
+.resultTitle {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--base-btn-color);
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  background-color: var(--base-btn-color);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+thead th {
+  padding: 12px 8px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--dark-main);
+  color: white;
+}
+
+tbody td {
+  padding: 8px;
+  font-size: 15px;
+
+  text-align: left;
+}
+
+.table-container button {
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--base-btn-color);
+  width: 100%;
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Exam ID";
+  }
+  td:nth-of-type(2):before {
+    content: "Class";
+  }
+  td:nth-of-type(3):before {
+    content: "Subject";
+  }
+  td:nth-of-type(4):before {
+    content: "Chapter";
+  }
+  td:nth-of-type(5):before {
+    content: "Marks";
+  }
+  td:nth-of-type(6):before {
+    content: "View";
+  }
+}
+.last-row ~ tr {
+  display: none;
+}
+
+/* Add the following style to enable vertical scrolling */
+.table-container {
+  overflow-y: auto;
+  max-height: 400px; /* You can adjust this height as needed */
+}

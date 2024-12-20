@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Uploading</title>
+  </head>
+
+  <body>
+    <h1>Upload pdf & Book cover on mongoDB</h1>
+    <hr />
+    <div>
+      <form action="/uploadblog" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="name">Book Title</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Name"
+            value=""
+            name="name"
+            required
+          />
+        </div>
+        <div>
+          <label for="class">topic</label>
+          <input
+            id="topic"
+            name="topic"
+            value=""
+            rows="2"
+            placeholder="Class"
+            required
+          >
+          </input>
+        </div>
+        <div>
+          <label for="image">Upload Image</label>
+          <input type="file" id="image" name="image" value="" required />
+        </div>
+        <div>
+          <label for="class">Class</label>
+          <textarea
+            id="content"
+            name="content"
+            value=""
+            rows="2"
+            placeholder="content"
+            required
+          >
+          </textarea>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <hr />
+    <button id="anotherButton">show me</button>
+
+    <hr />
+   
+
+    <script>
+      const button1 = document.querySelector("#anotherButton");
+      button1.addEventListener("click", () => {
+        // Open the PDF in a new tab
+        window.open("/getBook/hadirnunuchoto" + ".pdf");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap cdn links -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- icon library -->
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- slide -->
+    <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/calender.css">
+    <!-- tile and favicons -->
+    <title>Study Genie</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <body class="light">
+<!--Nav markup goes here-->
+    {{>navbar}}
+<!--End nav-->
+
+<!--Hero-->
+    <section class="hero" style="height: 15vh;">
+    </section> 
+
+<!-- end of hero segment -->
+   
+
+
+
+<!-- single article Starts -->
+
+<div class="newsletter">
+
+    <div class="container news_container">
+        <div class="newsletter_container">
+            <div class="newsletter_main">
+                <div class="single_article">                
+                    <div class="news_item">
+                        <div class="news_item_img">
+                            <h1 class="heading">{{blogpage.name}}</h1>
+                                {{#if blogpage.img.data }}
+                            <img src="data:{{ blogpage.img.contentType }};base64,{{ blogpage.img.data }}"  alt="">
+                            {{/if}}
+                        </div>
+                        <div class="news_item_info">
+                            <div>
+                                <img src="data:{{ blogpage.img.contentType }};base64,{{ blogpage.img.data }}" alt="witter_img">
+                                <p class="writter">by {{blogpage.Writer}}</p>
+                            </div>
+                            
+                            
+                            <p class="date_time">{{blogpage.date}}</p>
+                        </div>
+                        <div class="news_item_fullinfo">
+                            <p class="post_content">
+                              {{blogpage.content}}
+                            </p>
+                        </div>
+                <input
+                  type="hidden"
+                  name="polynomialMcq"
+                  id="getId"
+                  value="{{blogpage._id}}"
+                />
+        
+                    </div>
+                </div>
+                <div id="disqus_thread"></div>
+            </div>   
+        </div> 
+        <!-- sidebar start-->
+        {{!-- <div class="sidebar">
+            <div class="sidebar_items">
+                <div class="calendar">
+                    <h1>Calendar</h1>
+                    <div class="calendar-header">
+                        <span class="month-picker" id="month-picker">February</span>
+                        <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+                            <span id="year">2021</span>
+                            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-week-day">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                    <div class="calendar-footer">
+                        <div class="toggle">
+                            <span>Dark Mode</span>
+                            <div class="dark-mode-switch">
+                                <div class="dark-mode-switch-ident"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="month-list"></div>
+                </div>
+                <div class="recent_blogs">
+                    <h1>Featured Articles</h1>
+                    <div class="card">
+                        <ul>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>       
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="avdertisement">
+                    <h1>Advertisement</h1>
+                    <img src="images/card_header.jpg" alt="">
+                </div>
+                <div class="admission_news">
+                    <h1>Top News</h1>
+                    <div class="card">
+                        <ul>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>
+                            <li> <img src="./images/bk1.jpg" alt=""><p><a href="#" target="_blank" rel="noopener noreferrer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsa itaque veritatis</a></p></li>       
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="avdertisement">
+                    <h1>Advertisement</h1>
+                    <img src="images/card_header.jpg" alt="">
+                </div>
+            </div>
+        </div> --}}
+        {{>sidebar}}
+
+        <!-- sidebar ends here -->
+    </div>
+</div>
+
+<!-- single article ends -->
+
+<!-- splide slider  starts -->
+<section class="splide" aria-label="Sp  lide Basic HTML Example">
+    <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide br-2 m-5">
+                <div class="card" style="width: 20 rem">
+                    <div class="card_img">
+                        <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">HSC</p>
+                    </div>
+                
+                <div class="card-body">
+                    
+                    <p class="card-tex">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div>
+            </li>
+                <li class="splide__slide m-5"><div class="card" style="width: 20 rem">
+                <div class="card_img">
+                    <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">SSC</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div></li>
+                <li class="splide__slide m-5"><div class="card" style="width: 20 rem">
+                <div class="card_img">
+                    <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">JSC</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div></li>
+                <li class="splide__slide m-5"><div class="card" style="width: 20 rem">
+                <div class="card_img">
+                    <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">PSC</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div></li>
+                <li class="splide__slide m-5"><div class="card" style="width: 20 rem">
+                <div class="card_img">
+                    <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">ADMISSION</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div></li>
+                <li class="splide__slide m-5"><div class="card" style="width: 20 rem">
+                <div class="card_img">
+                    <img class="card-img-top" src="images/card_header.jpg" alt="">
+                        <p class="card-title">JOBS</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-block">Read more</a>
+                </div>
+                </div></li>
+            </ul>
+    </div>
+    </section>
+<!-- slipde slider ends -->
+
+
+<!-- footer segment starts -->
+      {{>footer}}
+<!-- footer segment ends -->
+
+
+    <!-- script -->
+    <!-- slider cdn script -->
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+
+   <!-- bootsrap  cdn script-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    
+    var disqus_config = function () {
+    const getId = document.getElementById("getId").value;
+    this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = getId+"aaaaa"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.title = getId;
+    console.log(this.page);
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://studygenie-1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+    <script src="js/calender.js"></script>
+  </body>
+</html>
