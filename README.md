@@ -63,4 +63,7 @@ If you have any questions or suggestions, feel free to contact me:
 
 - **Email**: safiulalamsarker@gmail.com
 - **LinkedIn**: [Safiul Alam Sarker](https://www.linkedin.com/in/safiul-alam-sarker)
+- **Email**: nurehadi10@gmail.com
+- **LinkedIn**: [Nure Hadi](https://www.linkedin.com/in/nure-hadi-244199280/)
+
 
